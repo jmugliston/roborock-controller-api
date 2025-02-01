@@ -3,7 +3,11 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     commit-message:
-      # Prefix all commit messages with "chore: "
       prefix: "chore"
     schedule:
       interval: "weekly"
+    allow:
+      - dependency-type: "production"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
