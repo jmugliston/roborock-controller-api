@@ -17,7 +17,7 @@
   "author": "James Mugliston",
   "license": "MIT",
   "dependencies": {
-    "@fastify/autoload": "^6.3.0",
+    "@fastify/autoload": "^6.3.1",
     "@fastify/basic-auth": "^6.2.0",
     "@fastify/env": "^5.0.2",
     "@fastify/sensible": "^6.0.3",
