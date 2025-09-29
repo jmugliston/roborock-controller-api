@@ -19,7 +19,7 @@
   "dependencies": {
     "@fastify/autoload": "^6.3.1",
     "@fastify/basic-auth": "^6.2.0",
-    "@fastify/env": "^5.0.2",
+    "@fastify/env": "^5.0.3",
     "@fastify/sensible": "^6.0.3",
     "fastify": "^5.6.1",
     "fastify-cli": "^7.4.0",
