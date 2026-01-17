@@ -36,8 +36,8 @@ importers:
         specifier: ^17.0.0
         version: 17.0.0
       miio:
-        specifier: github:atheius/miio
-        version: git+https://git@github.com:atheius/miio.git#6bea08521c1ce99962d41a7b6203fca3998e1154
+        specifier: github:jmugliston/miio
+        version: https://codeload.github.com/jmugliston/miio/tar.gz/6bea08521c1ce99962d41a7b6203fca3998e1154
       node-schedule:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1241,8 +1241,8 @@ packages:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
-  miio@git+https://git@github.com:atheius/miio.git#6bea08521c1ce99962d41a7b6203fca3998e1154:
-    resolution: {commit: 6bea08521c1ce99962d41a7b6203fca3998e1154, repo: git@github.com:atheius/miio.git, type: git}
+  miio@https://codeload.github.com/jmugliston/miio/tar.gz/6bea08521c1ce99962d41a7b6203fca3998e1154:
+    resolution: {tarball: https://codeload.github.com/jmugliston/miio/tar.gz/6bea08521c1ce99962d41a7b6203fca3998e1154}
     version: 0.16.0
     engines: {node: '>=6.6.0'}
     hasBin: true
@@ -3285,7 +3285,7 @@ snapshots:
       braces: 3.0.3
       picomatch: 2.3.1
 
-  miio@git+https://git@github.com:atheius/miio.git#6bea08521c1ce99962d41a7b6203fca3998e1154:
+  miio@https://codeload.github.com/jmugliston/miio/tar.gz/6bea08521c1ce99962d41a7b6203fca3998e1154:
     dependencies:
       abstract-things: 0.9.0
       appdirectory: 0.1.0
