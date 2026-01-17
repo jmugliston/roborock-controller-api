@@ -16,14 +16,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build --if-present
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm add -g c8
       - run: |
           shopt -s globstar
-          node --test --experimental-test-coverage test/**/*.test.js
-      - run: npm run lint
+          c8 node --test test/**/*.test.js
+      - run: pnpm run lint

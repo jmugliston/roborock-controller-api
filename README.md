@@ -23,7 +23,7 @@ This project was created using the [fastify-cli](https://github.com/fastify/fast
 ## Install
 
 ```sh
-npm install
+pnpm install
 ```
 
 ## Setup
@@ -66,7 +66,7 @@ BIN_SCHEDULE_CRON=0 7 * * *
 Run the API:
 
 ```
-npm run dev
+pnpm run dev
 ```
 
 ## Docker
