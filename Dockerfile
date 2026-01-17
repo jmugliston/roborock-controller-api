@@ -4,11 +4,11 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-RUN npm install npm@latest -g
+RUN npm install -g pnpm
 RUN apk add dumb-init
 
-COPY --chown=node:node package.json package-lock.json ./
-RUN npm install --no-optional && npm cache clean --force
+COPY --chown=node:node package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install --frozen-lockfile --prod && pnpm store prune
 COPY --chown=node:node src ./src
 
 USER node
@@ -16,4 +16,4 @@ USER node
 HEALTHCHECK --interval=60s --timeout=10s --start-period=5s \
     CMD node ./src/scripts/healthcheck.js
 
-CMD ["dumb-init", "npm", "start"]
+CMD ["dumb-init", "pnpm", "start"]

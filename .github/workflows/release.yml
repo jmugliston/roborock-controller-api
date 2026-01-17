@@ -22,19 +22,23 @@ jobs:
         with:
           ssh-key: ${{ secrets.DEPLOY_KEY }}
           fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
+          cache: 'pnpm'
       - name: Install dependencies
-        run: npm clean-install
+        run: pnpm install --frozen-lockfile
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
-        run: npm audit signatures
+        run: pnpm audit signatures
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ''
-        run: npm -g install @semantic-release/git semantic-release && semantic-release
+        run: pnpm add -g @semantic-release/git semantic-release && semantic-release
   push_to_registry:
     name: Push Docker image to Docker Hub
     needs: release
